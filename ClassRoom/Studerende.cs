@@ -15,9 +15,16 @@ namespace ClassRoom
 
         public Studerende(string name, int birthMonth, int birthDay)
         {
+
             Name = name;
             BirthMonth = birthMonth;
             BirthDay = birthDay;
+
+            if (BirthMonth < 1 || BirthMonth > 12)
+            {
+                throw new Exception("!! Birth Month exceeds the 1-12 interval");
+            }
+
         }
 
         public string årstid(Studerende enStuderende)
