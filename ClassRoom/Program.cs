@@ -18,14 +18,28 @@ namespace ClassRoom
 
             klasse1.KlasseNavn = "3B";
             klasse1.SemesterStart = new DateTime(2018/9/4);
+            klasse1.Klasseliste = new List<Studerende>();
             klasse1.Klasseliste.Add(Anders);
             klasse1.Klasseliste.Add(Nicolai);
             klasse1.Klasseliste.Add(Patrick);
 
 
             Console.WriteLine($"Klasse Navn: {klasse1.KlasseNavn}, Semester start: {klasse1.SemesterStart}");
+
             klasse1.Klasseliste.ForEach(studerende =>
-            {Console.WriteLine($"{studerende.Name}"); studerende.årstid(studerende); });
+            {
+
+             Console.WriteLine($"{studerende.Name}");
+             Console.WriteLine(studerende.årstid(studerende));
+                
+            });
+
+            klasse1.årstidscounter(klasse1.Klasseliste);
+            
+           
+
+
+
 
 
             Console.ReadKey();

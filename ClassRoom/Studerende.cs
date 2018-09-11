@@ -9,9 +9,9 @@ namespace ClassRoom
 {
     class Studerende
     {
-        public string Name { get; set; }
-        public int BirthMonth { get; set; }
-        public int BirthDay { get; set; }
+        public string Name { get; }
+        public int BirthMonth { get; }
+        public int BirthDay { get; }
 
         public Studerende(string name, int birthMonth, int birthDay)
         {
@@ -20,25 +20,28 @@ namespace ClassRoom
             BirthDay = birthDay;
         }
 
-        public void årstid(Studerende enStuderende)
+        public string årstid(Studerende enStuderende)
         {
             if (BirthMonth < 3 || BirthMonth == 12)
             {
-                Console.WriteLine("Den studerende har fødselsdag ved Vinter");
+                return "Vinter";
             }
             else if (BirthMonth < 6 || BirthMonth > 2)
             {
-                Console.WriteLine("Den studerende har fødselsdag ved Forår");
+                return "Forår";
             }
             else if (BirthMonth < 9 || BirthMonth > 5)
             {
-                Console.WriteLine("Den studerende har fødselsdag ved Sommer");
+                return "Sommer";
             }
             else
             {
-                Console.WriteLine("Den studerende har fødselsdag ved Efterår");
+                return "Efterår";
             }
         }
+
+
+
     }
 
 }
