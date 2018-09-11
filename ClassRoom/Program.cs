@@ -17,14 +17,16 @@ namespace ClassRoom
             Studerende Patrick = new Studerende("Patrick", 08, 07);
 
             klasse1.KlasseNavn = "3B";
-            klasse1.SemesterStart = new DateTime(4/9/2018);
+            klasse1.SemesterStart = new DateTime(2018/9/4);
             klasse1.Klasseliste.Add(Anders);
             klasse1.Klasseliste.Add(Nicolai);
             klasse1.Klasseliste.Add(Patrick);
 
 
             Console.WriteLine($"Klasse Navn: {klasse1.KlasseNavn}, Semester start: {klasse1.SemesterStart}");
-            klasse1.Klasseliste.ForEach(studerende => { Console.WriteLine($"{studerende.Name}"); });
+            klasse1.Klasseliste.ForEach(studerende =>
+            {Console.WriteLine($"{studerende.Name}"); studerende.årstid(studerende); });
+
 
             Console.ReadKey();
 
